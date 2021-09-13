@@ -84,13 +84,18 @@
 				</clipPath>
 				</defs>
 			</symbol>
+			<symbol id="arrow-down" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g>
+					<path d="M5.99997 9.42014C5.7849 9.42014 5.56987 9.33802 5.4059 9.17414L0.24617 4.01436C-0.0820565 3.68613 -0.0820565 3.15397 0.24617 2.82587C0.574263 2.49778 1.10632 2.49778 1.43457 2.82587L5.99997 7.39153L10.5654 2.82603C10.8936 2.49794 11.4256 2.49794 11.7537 2.82603C12.0821 3.15413 12.0821 3.68629 11.7537 4.01451L6.59404 9.1743C6.42999 9.33821 6.21495 9.42014 5.99997 9.42014Z" fill="currentColor"/>
+				</g>
+			</symbol>
 		</defs>
 	</svg>
-	<div class="w-full h-20 bg-white flex justify-center items-center">
+	<div class="w-full h-20 bg-white flex justify-center items-center px-4">
 		logo
 	</div>
 	<div class="w-full h-96 relative overflow-hidden">
-		<div class="absolute z-20 top-0 left-0 w-full h-full">
+		<div class="absolute z-20 top-0 left-0 w-full h-full px-4">
 			<div class="max-w-5xl mx-auto block w-full h-full flex flex-col justify-center">
 				<h1 class="text-4xl text-white font-bold mb-4">Calculate your emissions</h1>
 				<button class="rounded-xl bg-blue-400 font-bold text-white px-4 py-2 w-52">How it's done</button>
@@ -98,7 +103,7 @@
 		</div>
 		<img src="img/header-image.jpg" class="absolute w-full h-auto top-0 left-0 z-10">
 	</div>
-	<div class="max-w-5xl mx-auto w-full my-8 md:my-16">
+	<div class="max-w-5xl mx-auto w-full my-8 md:my-16 px-4">
 		<div class="flex justify-center mb-4">
 			<div class="relative inline-block">
 				<h2 class="text-2xl">Week Schedule</h2>
@@ -109,7 +114,7 @@
 				</button>
 			</div>
 		</div>
-		<div class="flex justify-center space-x-4 mb-4">
+		<div class="flex justify-center space-x-2 md:space-x-4 mb-4 flex-wrap">
 			<div class="border border-gray-300 border-1 rounded-2xl p-2 flex flex-col space-y-2">
 				<h3 class="font-bold text-center">MON</h3>
 				<button class="rounded-full w-12 h-12 bg-gray-300 flex justify-center items-center" aria-label="Work from the Office">
@@ -232,7 +237,98 @@
 			</div>
 		</div>
 	</div>
-	<div class="max-w-5xl mx-auto w-full my-8 md:my-16">
+	<div id="car-motorcycle-form" class="max-w-5xl mx-auto w-full my-8 md:my-12 px-4">
+		<div class="border border-gray-300 border-1 rounded-2xl p-4 flex flex-col space-y-4 relative">
+			<div class="flex space-x-2 items-center bg-white absolute -top-4 left-2 px-2">
+				<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
+					<use xlink:href="#car-motorcycle"></use>
+				</svg>
+				<h3>car or motorcycle</h3>
+			</div>
+			<input id="car-motorcycle-route" type="text" class="bg-gray-200 rounded-xl p-2 px-4 w-full" placeholder="Route one-way">
+			<div class="relative">
+				<input id="car-motorcycle-usage" type="text" class="bg-gray-200 rounded-xl p-2 px-4 w-full" placeholder="Consumption / 100km">
+				<button class="w-8 h-8 absolute top-1/2 right-0 transform -translate-y-1/2" id="usage-info">
+					<svg width="16" height="16" viewBox="0 0 8 8" preserveAspectRatio="xMinYMax">
+						<use xlink:href="#info"></use>
+					</svg>
+				</button>
+			</div>
+			<div class="relative">
+				<h4>Fuel</h4>
+				<div class="flex w-full justify-between max-w-xs">
+					<div>
+						<input type="radio" id="diesel" name="car-motorcycle-fuel" value="diesel"
+							   checked>
+						<label for="diesel">Diesel</label>
+					</div>
+					<div>
+						<input type="radio" id="petrol" name="car-motorcycle-fuel" value="petrol">
+						<label for="petrol">Petrol</label>
+					</div>
+					<div>
+						<input type="radio" id="natural-gas" name="car-motorcycle-fuel" value="natural-gas">
+						<label for="natural-gas">Natural gas</label>
+					</div>
+				</div>
+			</div>
+			<button id="car-motorcycle-more" class="flex space-x-2 justify-center items-center">
+				<span>more settings</span>
+				<svg width="16" height="16" viewBox="0 0 12 12" preserveAspectRatio="xMinYMax">
+					<use xlink:href="#arrow-down"></use>
+				</svg>
+			</button>
+			<div class="hidden">
+				<input id="car-motorcycle-price" type="text" class="bg-gray-200 rounded-xl p-2 px-4 w-full" placeholder="Price per litre">
+			</div>
+		</div>
+	</div>
+
+	<div id="tram-form" class="max-w-5xl mx-auto w-full my-8 md:my-12 px-4">
+		<div class="border border-gray-300 border-1 rounded-2xl p-4 flex flex-col space-y-4 relative">
+			<div class="flex space-x-2 items-center bg-white absolute -top-4 left-2 px-2">
+				<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
+					<use xlink:href="#tram"></use>
+				</svg>
+				<h3>tram</h3>
+			</div>
+			<input id="tram-route" type="text" class="bg-gray-200 rounded-xl p-2 px-4 w-full" placeholder="Route one-way">
+			<input id="tram-price" type="text" class="bg-gray-200 rounded-xl p-2 px-4 w-full" placeholder="Ticket price">
+		</div>
+	</div>
+
+	<div id="train-form" class="max-w-5xl mx-auto w-full my-8 md:my-12 px-4">
+		<div class="border border-gray-300 border-1 rounded-2xl p-4 flex flex-col space-y-4 relative">
+			<div class="flex space-x-2 items-center bg-white absolute -top-4 left-2 px-2">
+				<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
+					<use xlink:href="#train"></use>
+				</svg>
+				<h3>train</h3>
+			</div>
+			<input id="train-route" type="text" class="bg-gray-200 rounded-xl p-2 px-4 w-full" placeholder="Route one-way">
+			<input id="train-price" type="text" class="bg-gray-200 rounded-xl p-2 px-4 w-full" placeholder="Ticket price">
+		</div>
+	</div>
+
+	<div id="bus-form" class="max-w-5xl mx-auto w-full my-8 md:my-12 px-4">
+		<div class="border border-gray-300 border-1 rounded-2xl p-4 flex flex-col space-y-4 relative">
+			<div class="flex space-x-2 items-center bg-white absolute -top-4 left-2 px-2">
+				<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
+					<use xlink:href="#bus"></use>
+				</svg>
+				<h3>bus</h3>
+			</div>
+			<input id="bus-route" type="text" class="bg-gray-200 rounded-xl p-2 px-4 w-full" placeholder="Route one-way">
+			<input id="bus-price" type="text" class="bg-gray-200 rounded-xl p-2 px-4 w-full" placeholder="Ticket price">
+			<!--TODO Any other inputs??-->
+		</div>
+	</div>
+
+	<div id="bus-form" class="max-w-5xl mx-auto w-full my-8 md:my-12 px-4 flex justify-center">
+		<input type="submit" value="CALCULATE" class="rounded-xl bg-blue-400 font-bold text-white px-4 py-2 w-full max-w-sm cursor-pointer">
+	</div>
+	<div class="max-w-5xl mx-auto w-full my-8 md:my-16 px-4">
+		<h2 class="text-2xl">Some title</h2>
 		<p>Some text</p>
 	</div>
 </body>

@@ -53,23 +53,15 @@ let train = {
     ticket_price: 20
 }
 
-let CO2 = 0
-let distance = 0 // km
-let fuel_usage = 0 // l per 100 km
-let emission = 0 // kg CO2 per liter
-let heating = 0 // mmBtu per scf
-
 const weeksperyear = 52
 
-const bbtu_to_m3 = 28.263682 // m3 of natural gas at defined temperature and pressure.
+const HHV_natural_gas = 0.001026
+const HHV_gasoline = 0.125
+const HHV_diesel = 0.148
 
-const heating_diesel = 0.139 * bbtu_to_m3
-const heating_gasoline = 0.135 * bbtu_to_m3
-const heating_natural_gas = 0.001026 * bbtu_to_m3
-
-const emission_diesel = 46.3692
-const emission_gasoline = 37.7772
-const emission_natural_gas = 0.2477
+const EF2_natural_gas = 53.06
+const EF2_gasoline = 70.22
+const EF2_diesel = 74.92
 
 const fuel_usage_bus = 38.7
 
@@ -77,7 +69,11 @@ const fuel_usage_bus = 38.7
 var car_elem = document.getElementById("week-schedule");
 
 var calculate = function() {
-    //CO2 = distance * fuel_usage * emission * heating * 1000;
+
+    let distance = 0 // km
+    let fuel_usage = 0 // l per 100 km
+    let HHV = 0 // kg CO2 per liter
+    let EF2 = 0 // mmBtu per scf
 
     homeoffice_days = 0
     let costs = 0;
@@ -100,18 +96,35 @@ var calculate = function() {
 
 
         if(diesel_radio.checked) {
-            //todo
+            HHV = HHV_diesel
+            EF2 = EF2_diesel
         }
         if(petrol_radio.checked) {
-            //todo
+            HHV = HHV_gasoline
+            EF2 = EF2_gasoline
         }
         if(natural_gas_radio.checked) {
-            //todo
+            HHV = HHV_natural_gas
+            EF2 = EF2_natural_gas
         }
+        let route = car_route_elem.value
+        distance = route * homeoffice_days * 2
+        fuel_usage = car_usage_elem.value
 
-        distance = homeoffice_days * 2
+        console.log("distance " + distance)
+        console.log("fuel_usage " + fuel_usage)
+        console.log("HHV " + HHV)
+        console.log("EF2 " + EF2)
 
-        CO2 += distance * fuel_usage * emission * heating * 1000;
+
+        let fuel = (fuel_usage / 100) * distance * 0.264172
+        CO2 = fuel * HHV * EF2
+        console.log("fuel " + fuel)
+        console.log("CO2 " + CO2)
+
+        //todo: discuss costs per km for a car
+        //71 Rappen per km
+        costs += distance * 0.71
     }
 
     if(vehicle.train) {
@@ -120,7 +133,7 @@ var calculate = function() {
         let route = train_route_elem.value
         let price = train_price_elem.value
         costs += price * homeoffice_days * 2
-        //todo
+        CO2 += 0
     }
 
     if(vehicle.tram) {
@@ -129,7 +142,7 @@ var calculate = function() {
         let route = tram_route_elem.value
         let price = tram_price_elem.value
         costs += price * homeoffice_days * 2
-        //todo
+        CO2 += 0
     }
 
     if(vehicle.bus) {
@@ -137,30 +150,22 @@ var calculate = function() {
         let bus_price_elem = document.getElementById("bus-price");
         let route = bus_route_elem.value
         let price = bus_price_elem.value
+
         costs += price * homeoffice_days * 2
-        //todo
+
+        distance = route * homeoffice_days * 2
+        let fuel = (fuel_usage_bus / 100) * distance
+        CO2 += fuel * HHV_diesel * EF2_diesel
     }
 
-    //update costs
     let CO2_txt = document.getElementById("CO2-txt");
     let savings_txt = document.getElementById("savings-txt");
 
-    CO2_txt.innerText = 'You save ' + CO2 + 'kg of CO2 per week!'
-    savings_txt.innerText = "You save CHF " + costs + " .- per week!"
-
-    //update CO2 emission
-
+    CO2_txt.innerText = 'You save ' + CO2.toFixed(2) + 'kg of CO2 per week!'
+    savings_txt.innerText = "You save CHF " + costs.toFixed(2) + " .- per week!"
 }
 
-let example_calculation_diesel_car = function() {
-    distance = 100
-    fuel_usage = 6
-    emission = emission_diesel
-    heating = heating_diesel
-    CO2 = distance * fuel_usage * emission * heating * 1000 //in kg
-}
 
-example_calculation_diesel_car()
 
 buttons = document.getElementsByTagName("button")
 

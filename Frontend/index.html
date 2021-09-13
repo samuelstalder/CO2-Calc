@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="/css/tailwind.css" rel="stylesheet">
 </head>
-<body>
+<body onload="setup()">
 	<svg class="svg-symbols" width="0" height="0" aria-hidden="true"><!-- focusable="false" -->
 		<defs>
 			<symbol id="office" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -133,12 +133,12 @@
 		<div class="flex justify-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4 flex-wrap">
 			<div class="border border-gray-300 border-1 rounded-2xl p-2 flex sm:flex-col space-x-4 sm:space-x-0 sm:space-y-2 items-center w-full sm:w-auto justify-center max-w-xs">
 				<h3 class="font-bold text-center">MON</h3>
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
+				<button value="0" id="work-btn0" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
 					<svg width="30px" height="30px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#office"></use>
 					</svg>
 				</button>				
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
+				<button value="0" id="home-btn0" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
 					<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#home"></use>
 					</svg>
@@ -146,12 +146,12 @@
 			</div>
 			<div class="border border-gray-300 border-1 rounded-2xl p-2 flex sm:flex-col space-x-4 sm:space-x-0 sm:space-y-2 items-center w-full sm:w-auto justify-center max-w-xs">
 				<h3 class="font-bold text-center">TUE</h3>
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
+				<button value="1" id="work-btn1" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
 					<svg width="30px" height="30px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#office"></use>
 					</svg>
 				</button>				
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
+				<button value="1" id="home-btn1" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
 					<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#home"></use>
 					</svg>
@@ -159,12 +159,12 @@
 			</div>
 			<div class="border border-gray-300 border-1 rounded-2xl p-2 flex sm:flex-col space-x-4 sm:space-x-0 sm:space-y-2 items-center w-full sm:w-auto justify-center max-w-xs">
 				<h3 class="font-bold text-center">WED</h3>
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
+				<button value="2" id="work-btn2" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
 					<svg width="30px" height="30px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#office"></use>
 					</svg>
 				</button>				
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
+				<button value="2" id="home-btn2" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
 					<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#home"></use>
 					</svg>
@@ -172,12 +172,12 @@
 			</div>
 			<div class="border border-gray-300 border-1 rounded-2xl p-2 flex sm:flex-col space-x-4 sm:space-x-0 sm:space-y-2 items-center w-full sm:w-auto justify-center max-w-xs">
 				<h3 class="font-bold text-center">THU</h3>
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
+				<button value="3" id="work-btn3" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
 					<svg width="30px" height="30px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#office"></use>
 					</svg>
 				</button>				
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
+				<button value="3" id="home-btn3" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
 					<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#home"></use>
 					</svg>
@@ -185,12 +185,12 @@
 			</div>
 			<div class="border border-gray-300 border-1 rounded-2xl p-2 flex sm:flex-col space-x-4 sm:space-x-0 sm:space-y-2 items-center w-full sm:w-auto justify-center max-w-xs">
 				<h3 class="font-bold text-center">FRI</h3>
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
+				<button value="4" id="work-btn4" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
 					<svg width="30px" height="30px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#office"></use>
 					</svg>
 				</button>				
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
+				<button value="4" id="home-btn4" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
 					<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#home"></use>
 					</svg>
@@ -198,12 +198,12 @@
 			</div>
 			<div class="border border-gray-300 border-1 rounded-2xl p-2 flex sm:flex-col space-x-4 sm:space-x-0 sm:space-y-2 items-center w-full sm:w-auto justify-center max-w-xs">
 				<h3 class="font-bold text-center">SAT</h3>
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
+				<button value="5" id="work-btn5" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
 					<svg width="30px" height="30px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#office"></use>
 					</svg>
 				</button>				
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
+				<button value="5" id="home-btn5" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
 					<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#home"></use>
 					</svg>
@@ -211,12 +211,12 @@
 			</div>
 			<div class="border border-gray-300 border-1 rounded-2xl p-2 flex sm:flex-col space-x-4 sm:space-x-0 sm:space-y-2 items-center w-full sm:w-auto justify-center max-w-xs">
 				<h3 class="font-bold text-center">SUN</h3>
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
+				<button value="6" id="work-btn6" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from the Office">
 					<svg width="30px" height="30px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#office"></use>
 					</svg>
 				</button>				
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
+				<button value="6" id="home-btn6" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Work from Home">
 					<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#home"></use>
 					</svg>
@@ -230,22 +230,22 @@
 		</div>
 		<div class="flex justify-center mb-4">
 			<div class="border border-gray-300 border-1 rounded-2xl p-2 flex space-x-2 w-full sm:w-auto max-w-xs justify-center">
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Car or motorcycle">
+				<button id="car" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="Car or motorcycle">
 					<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#car-motorcycle"></use>
 					</svg>
 				</button>
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="train">
+				<button id="train" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="train">
 					<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#train"></use>
 					</svg>
 				</button>
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="tram">
+				<button id="tram" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="tram">
 					<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#tram"></use>
 					</svg>
 				</button>
-				<button class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="bus">
+				<button id="bus" class="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center" aria-label="bus">
 					<svg width="28px" height="28px" viewBox="0 0 18 18" preserveAspectRatio="xMinYMax">
 						<use xlink:href="#bus"></use>
 					</svg>
@@ -340,8 +340,8 @@
 		</div>
 	</div>
 
-	<div id="bus-form" class="max-w-4xl mx-auto w-full my-8 md:my-12 px-4 flex justify-center">
-		<input type="submit" value="CALCULATE" class="rounded-xl bg-blue-400 font-bold text-white px-4 py-2 w-full max-w-sm cursor-pointer">
+	<div id="calc-form" class="max-w-4xl mx-auto w-full my-8 md:my-12 px-4 flex justify-center">
+		<button onclick="calculate()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">CALCULATION</button>
 	</div>
 
 	<div class="max-w-4xl mx-auto w-full my-12 md:my-16 px-4">
@@ -350,14 +350,14 @@
 				<svg width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="xMinYMax">
 					<use xlink:href="#carbon-dioxide"></use>
 				</svg>
-				<h3 class="text-blue-400 font-bold text-2xl text-center">You save 10kg of CO<sub>2</sub> per week!</h3>
+				<h3 id="CO2-txt" class="text-blue-400 font-bold text-2xl text-center">You save 10kg of CO<sub>2</sub> per week!</h3>
 			</div>
 	
 			<div class="shadow-lg rounded-2xl p-4 flex flex-col space-y-4 relative items-center max-w-sm w-full">
 				<svg width="90px" height="90px" viewBox="0 0 100 100" preserveAspectRatio="xMinYMax">
 					<use xlink:href="#wallet"></use>
 				</svg>
-				<h3 class="text-blue-400 font-bold text-2xl text-center">You save CHF 100.- per week!</h3>
+				<h3 id="savings-txt" class="text-blue-400 font-bold text-2xl text-center">You save CHF 100.- per week!</h3>
 			</div>
 		</div>
 	</div>

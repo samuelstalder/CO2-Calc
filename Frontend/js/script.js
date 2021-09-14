@@ -1,5 +1,3 @@
-console.log("test");
-
 
 let weekday = {
     work: false,
@@ -113,19 +111,9 @@ var calculate = function() {
         distance = route * homeoffice_days * 2
         fuel_usage = car_usage_elem.value
 
-        console.log("distance " + distance)
-        console.log("fuel_usage " + fuel_usage)
-        console.log("HHV " + HHV)
-        console.log("EF2 " + EF2)
-
-
         let fuel = (fuel_usage / 100) * distance * 0.264172
         CO2 = fuel * HHV * EF2
-        console.log("fuel " + fuel)
-        console.log("CO2 " + CO2)
 
-        //todo: discuss costs per km for a car
-        //71 Rappen per km
         costs += distance * 0.71
     }
 
@@ -188,7 +176,6 @@ var update_week_schedule = function() {
         }
     }
 
-    console.log(week_schedule)
 }
 
 var update_vehicle = function() {
@@ -235,7 +222,6 @@ var update_vehicle = function() {
         bus_elem.style.background="Gainsboro"
     }
 
-    console.log(vehicle)
 }
 
 
@@ -244,7 +230,6 @@ Array.from(buttons).forEach(button =>
 
 function btn_selection(event) { // Listener can access its triggering event
     const button = event.currentTarget; // event's `target` property is useful
-    console.log("event: " + button.id);
     if (button.id === "work-btn0") {
         week_schedule[0].work = !week_schedule[0].work
         week_schedule[0].home = false

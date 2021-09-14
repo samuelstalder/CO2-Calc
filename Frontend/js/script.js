@@ -23,12 +23,6 @@ let vehicle = {
     bus: false
 }
 
-let vehicle_to_travel = {
-    car: false,
-    bus: false,
-    tram: false,
-    train: false
-}
 
 let car = {
     distance: 40,
@@ -196,34 +190,31 @@ var update_vehicle = function() {
     let tram_form_elem = document.getElementById("tram-form")
     let bus_form_elem = document.getElementById("bus-form")
 
-    let car_elem = document.getElementById("car")
-    let train_elem = document.getElementById("train")
-    let tram_elem = document.getElementById("tram")
-    let bus_elem = document.getElementById("bus")
+    let car_elem = document.getElementById("car-selection")
+    let train_elem = document.getElementById("train-selection")
+    let tram_elem = document.getElementById("tram-selection")
+    let bus_elem = document.getElementById("bus-selection")
 
     if(vehicle.car) {
         car_elem.style.background="CadetBlue"
-        car_form_elem.style.display = "block";
-    } if(!vehicle.car) {
+        car_form_elem.style.display = "block"
+    } else if(!vehicle.car) {
         car_elem.style.background="Gainsboro"
-        car_form_elem.style.display = "none";
-
+        car_form_elem.style.display = "none"
     }
 
     if(vehicle.train) {
         train_elem.style.background="CadetBlue"
         train_form_elem.style.display = "block"
-        console.log("good")
-    } if(!vehicle.train) {
-        train_elem.style.background="CadetBlue"
+    } else if(!vehicle.train) {
+        train_elem.style.background="Gainsboro"
         train_form_elem.style.display = "none"
-        console.log("bad")
     }
 
     if(vehicle.tram) {
         tram_form_elem.style.display = "block"
         tram_elem.style.background="CadetBlue"
-    } if(!vehicle.tram) {
+    } else if(!vehicle.tram) {
         tram_form_elem.style.display = "none"
         tram_elem.style.background="Gainsboro"
     }
@@ -231,7 +222,7 @@ var update_vehicle = function() {
     if(vehicle.bus) {
         bus_form_elem.style.display = "block"
         bus_elem.style.background="CadetBlue"
-    } if(!vehicle.bus) {
+    } else if(!vehicle.bus) {
         bus_form_elem.style.display = "none"
         bus_elem.style.background="Gainsboro"
     }
@@ -296,16 +287,16 @@ function btn_selection(event) { // Listener can access its triggering event
         week_schedule[6].home = !week_schedule[6].home
     }
 
-    if (button.id === "car") {
+    if (button.id === "car-selection") {
         vehicle.car = !vehicle.car
     }
-    if (button.id === "train") {
+    if (button.id === "train-selection") {
         vehicle.train = !vehicle.train
     }
-    if (button.id === "tram") {
+    if (button.id === "tram-selection") {
         vehicle.tram = !vehicle.tram
     }
-    if (button.id === "bus") {
+    if (button.id === "bus-selection") {
         vehicle.bus = !vehicle.bus
     }
 

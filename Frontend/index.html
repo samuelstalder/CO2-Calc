@@ -114,7 +114,7 @@
 		<div class="absolute z-20 top-0 left-0 w-full h-full px-8">
 			<div class="max-w-4xl mx-auto block w-full h-full flex flex-col justify-center">
 				<h1 class="text-4xl text-white font-bold mb-4">Calculate your emissions</h1>
-				<button class="rounded-xl bg-blue-400 font-bold text-white px-4 py-2 w-52">How it's done</button>
+				<a href="#calculation-text" class="rounded-xl bg-blue-400 font-bold text-white px-4 py-2 w-52 text-center">How it's done</a>
 			</div>
 		</div>
 		<img src="img/header-image.jpg" class="absolute w-full h-full top-0 left-0 z-10 object-cover opacity-80">
@@ -356,7 +356,7 @@
 				<svg width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="xMinYMax">
 					<use xlink:href="#carbon-dioxide"></use>
 				</svg>
-				<h3 id="CO2-txt" class="text-blue-400 font-bold text-2xl text-center">You save 10kg of CO<sub>2</sub> per week!</h3>
+				<h3 id="CO<sub>2</sub>-txt" class="text-blue-400 font-bold text-2xl text-center">You save 10kg of CO<sub>2</sub> per week!</h3>
 			</div>
 	
 			<div class="shadow-lg rounded-2xl p-4 flex flex-col space-y-4 relative items-center max-w-sm w-full">
@@ -369,20 +369,34 @@
 	</div>
 
 	<div class="max-w-4xl mx-auto w-full my-8 md:my-16 px-8">
-		<h2 class="text-2xl">Web-application co2mmute</h2>
-		<p>The main feature of this web application is the integrated CO2 calculator.
-			The calculator is started by entering a weekly schedule. Office days as well as home office days are set in the weekly schedule.
-			Then vehicles that are used to commute are selected. After this selection, new blocks appear in which you can enter further details of the vehicles used. For example, if there is use of a car the fuel consumption can be specified and the corresponding fuel can be selected.
-			When the necessary information has been entered, the calculation can be run by clicking the «Calculate» button. The results of the calculation are displayed in content cards, which show the CO2 reduction and money saved per week.
+		<h2 class="text-2xl">Web-application co<sub>2</sub>mmute</h2>
+		<p>The main feature of this web application is the integrated CO<sub>2</sub> calculator. The calculator is started by entering a weekly schedule. Office days as well as home office days are set in the weekly schedule. Then vehicles that are used to commute are selected. After this selection, new blocks appear in which you can enter further details of the vehicles used. 
+			For example, if there is use of a car the fuel consumption can be specified and the corresponding fuel can be selected. When the necessary information has been entered, the calculation can be run by clicking the «Calculate» button. The results of the calculation are displayed in content cards, which show the CO<sub>2</sub> reduction and money saved per week.
 		</p>
 	</div>
-	<div class="max-w-4xl mx-auto w-full my-8 md:my-16 px-8">
+	<div id="calculation-text" class="max-w-4xl mx-auto w-full py-4 md:my-8 px-8">
 		<h2 class="text-2xl">Calculation</h2>
-		<p>Some text: todo</p>
+		<p>The calculation of the CO<sub>2</sub> emissions as well as the required values ​​are based off information from the U.S. Environmental Protection Agency in their report “Direct Emissions from Stationary Combustion Sources” [1]. 
+			To keep the calculation simple, only the CO<sub>2</sub> emissions are considered, other greenhouse gases are neglected. 
+			The calculation of emissions for vehicles with internal combustion engines is done as follows: </p>
+			<div class="w-full flex justify-center mt-4">
+				<img class="w-full max-w-sm" src="img/calculation-1.png"/>		
+			</div>
+			<div class="w-full flex justify-center mb-4">
+				<img class="w-full max-w-sm" src="img/calculation-2.png"/>
+			</div>
+			<p>𝑯𝑯𝑽 (Heat content) and 𝑬𝑭𝟐 (Emission factor) are taken from report [1] for the corresponding fuel.  
+				Fuel consumption must be specified by the user in liters per 100km. The values provided in report [1] are based either on gallons or scf (standard cubic feet), depending on the fuel, which is why the amount of fuel is multiplied by a conversion factor (UF): </p>
+			<div class="w-full flex justify-center my-4">
+				<img class="w-full max-w-sm" src="img/calculation-3.png"/>
+			</div>
+			<a class="text-gray-500 text-sm" href="https://www.epa.gov/sites/default/files/2016-03/documents/stationaryemissions_3_2016.pdf">
+				[1]: U.S. EPA Center for Corporate Climate Leadership, "Greenhouse Gas Inventory Guidance - Direct Emissions from Stationary Combustion Sources," 2016. 
+			</a>
 	</div>
 	<div class="max-w-4xl mx-auto w-full my-8 md:my-16 px-8">
 		<h2 class="text-2xl">Critical appraisal</h2>
-		<p>co2mmute is an approach to show the reduction of ones CO2 footprint in relation to home office. Not all CO2 emissions are included at this current state. CO2 emissions that result from energy production for trams, trains, and electric vehicles, are difficult to implement currently. Other greenhouse gases such as N2O and CH4 are also not considered.</p>
+		<p>co<sub>2</sub>mmute is an approach to show the reduction of ones CO<sub>2</sub> footprint in relation to home office. Not all CO<sub>2</sub> emissions are included at this current state. CO<sub>2</sub> emissions that result from energy production for trams, trains, and electric vehicles, are difficult to implement currently. Other greenhouse gases such as N<sub>2</sub>O and CH<sub>4</sub> are also not considered. </p>
 	</div>
 	<footer class="bg-gray-200 w-full py-2">
 		<div class="max-w-4xl mx-auto w-full my-8 md:my-16 px-8">

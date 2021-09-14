@@ -62,6 +62,14 @@ const fuel_usage_bus = 38.7
 
 var car_elem = document.getElementById("week-schedule");
 
+document.getElementById("week-schedule-info").addEventListener("click", () => {
+    document.getElementById("week-schedule-info-popup").classList.toggle("hidden");
+});
+
+document.getElementById("usage-info").addEventListener("click", () => {
+    document.getElementById("usage-info-popup").classList.toggle("hidden");
+});
+
 var calculate = function() {
 
     let distance = 0 // km

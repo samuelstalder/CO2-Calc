@@ -319,4 +319,5 @@ function btn_selection(event) { // Listener can access its triggering event
 var setup = function () {
     update_vehicle()
     update_week_schedule()
+    calculate()
 }

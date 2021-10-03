@@ -1,2 +1,9 @@
 # CO2-Calc
-Calculates the savings in CO2 by increasing home office days
+Während der Covid-19 Pandemie zeigte sich im Jahr 2020, dass etwa ein Drittel der arbeitenden Bevölkerung in der Schweiz mindestens einmal pro Monat im Home-Office arbeiten konnte. Was gelegentliches Home-Office für die Umwelt und den persönlichen CO2 Ausstoss bedeutet, ist aber für viele noch unklar. 
+Mittels einer Web-Applikation sollen sich Arbeitende in der Schweiz, die Home-Office nutzen können, möglichst rasch und unkompliziert einen Eindruck verschaffen, inwiefern sie durch Home-Office Tage ihr persönlicher CO2 Ausstoss senken lässt. Die Erkenntnis über CO2 Ersparnisse des Arbeitsweges sollen so als Motivation für die Erweiterung der wöchentlichen Home-Office-Tage führen.
+
+Es existieren bereits einige Web-Tools zur Berechnung der persönlichen CO2-Emissionen [1] [2]. Diese Tools benötigen typischerweise deutlich mehr Eingabewerte für die Berechnung der Emissionen, welche sich durch die Benutzung Autos ergeben. Da man zum Beispiel den Autotyp angeben kann wird die Berechnung differenzierter. Jedoch glaubt das Entwicklungsteam, dass dieser Grad an Detail den durchschnittlichen Nutzer und Nutzerinnen keinen Mehrwert bietet, weil die zusätzliche Komplexität eine abschreckende Wirkung ausüben kann. Stattdessen sollte eine schnelle, grobe Einschätzung, die ansprechend dargestellt ist, bevorzugt werden. Somit können möglichst viele Personen ohne Fachkenntnisse mit potenziellen Einsparnissen für Home-Office überzeugt werden.
+
+Es gibt kein Tool, welches die Einsparung der CO2 Emissionen durch die Erhöhung der wöchentlichen Home-Office-Tage so klar und einfach darstellt wie co2mmute. Durch die visuell ansprechende, leicht bedienbare, öffentlich zugängliche Web-Applikation ist es jeder Person mögliche, ihre individuellen Auswertungen vorzunehmen.
+
+[read more!](https://github.com/samuelstalder/CO2-Calc/blob/main/Doc/Dokumentation_co2mmute_Gruppe6_SIC_SMART.pdf)
